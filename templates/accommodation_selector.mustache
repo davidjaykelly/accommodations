@@ -1,0 +1,70 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_accommodations/accommodation_selector
+
+    Template for displaying a user search and selector for accommodations.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * courseid - Optional course ID
+    * categoryid - Optional category ID
+    * formaction - URL for the form action
+
+    Example context (json):
+    {
+        "courseid": 5,
+        "categoryid": 0,
+        "formaction": "/local/accommodations/course.php"
+    }
+}}
+
+<div class="accommodation-user-selector mb-4">
+    <h4>{{#str}}adduseraccommodation, local_accommodations{{/str}}</h4>
+    
+    <form action="{{formaction}}" method="get" class="user-selector-form">
+        {{#courseid}}
+            <input type="hidden" name="courseid" value="{{courseid}}">
+        {{/courseid}}
+        
+        {{#categoryid}}
+            <input type="hidden" name="categoryid" value="{{categoryid}}">
+        {{/categoryid}}
+        
+        <input type="hidden" name="action" value="add">
+        
+        <div class="form-group">
+            <label for="accommodation-user-search">{{#str}}searchuser, local_accommodations{{/str}}</label>
+            <div class="input-group">
+                <input type="text" name="usersearch" id="accommodation-user-search" class="form-control" 
+                       placeholder="{{#str}}searchuserhint, local_accommodations{{/str}}" autocomplete="off">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-secondary">{{#str}}search{{/str}}</button>
+                </div>
+            </div>
+        </div>
+        
+        <input type="hidden" name="userid" id="accommodation-selected-userid" value="">
+        
+        <div id="accommodation-user-results" class="user-search-results mb-3"></div>
+    </form>
+</div>

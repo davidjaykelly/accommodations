@@ -1,0 +1,147 @@
+/**
+ * Styles for accommodation management plugin.
+ */
+
+/* Category tree styles */
+.category-tree {
+    list-style: none;
+    padding-left: 0;
+}
+
+.category-tree .list-group-item {
+    padding: 0.5rem 1rem;
+}
+
+.category-tree .has-children > .category-link {
+    cursor: pointer;
+}
+
+.category-tree .has-children.expanded > .category-link .category-toggle {
+    transform: rotate(90deg);
+}
+
+.category-tree .category-children {
+    padding-left: 1.5rem;
+}
+
+.category-tree .active {
+    background-color: #f8f9fa;
+}
+
+/* User search results */
+.user-search-results {
+    position: relative;
+    z-index: 1000;
+}
+
+.user-search-results .list-group {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-search-results .user-result {
+    cursor: pointer;
+}
+
+.user-search-results .user-result:hover {
+    background-color: #f8f9fa;
+}
+
+.user-search-results .user-picture {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+/* Accommodation cards and tables */
+.accommodations-table .badge {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+}
+
+.accommodations-summary .card {
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.accommodation-actions {
+    margin-bottom: 1.5rem;
+}
+
+.accommodation-user-selector {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Activity toggles */
+.activity-toggles-container .custom-switch {
+    padding-left: 2.5rem;
+}
+
+.activity-toggle:checked ~ .custom-control-label::before {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.accommodation-stats .card {
+    text-align: center;
+}
+
+.accommodation-stats .card-header {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.accommodation-stats .display-4 {
+    font-size: 2.5rem;
+    color: #007bff;
+}
+
+/* CSV upload form */
+.accommodations-upload-form {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+}
+
+/* Bulk selection */
+.bulk-action-form {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 0.25rem;
+}
+
+.bulk-action-button.disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* Reports */
+.report-filters {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.report-chart-container {
+    height: 400px;
+    margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .accommodations-table {
+        font-size: 0.9rem;
+    } 
+    .accommodation-stats .card {
+        margin-bottom: 1rem;
+    }
+}
